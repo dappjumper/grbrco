@@ -20,6 +20,7 @@
                 max-width:100%;
                 overflow:hidden;
             }
+
             #scroller, #scroller::after {
                 background-image:url('image.jpg');
                 background-repeat:repeat-x;
@@ -32,8 +33,6 @@
                 position:absolute;
                 top:0;
                 left:0;
-                
-                animation: slide 15s linear infinite;
             }
             #scroller::after {
                 content:"";
@@ -70,11 +69,21 @@
             }
             @keyframes slide{
               0%{
-                transform: translate3d(0, 0, 0);
+                transform: translate3d(0%, 0, 0);*/
               }
               100%{
-                transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);*/
               }
+            }
+            @media only screen and (max-width:900px) {
+                #scroller {
+                    animation: slide 5s linear infinite;
+                }
+            }
+            @media only screen and (min-width:900px) {
+                #scroller {
+                    animation: slide 15s linear infinite;
+                }
             }
         </style>
         <div id="scroller"></div>
